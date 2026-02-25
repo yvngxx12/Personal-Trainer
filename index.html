@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Trainer Elite</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    color:white;
+    scroll-behavior:smooth;
+}
+
+/* HERO */
+
+header{
+    min-height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background:linear-gradient(180deg,#000000,#140000);
+}
+
+header h1{
+    font-size:2.2rem;
+    color:#ff1e1e;
+    font-weight:800;
+    animation:fadeDown 1s ease;
+}
+
+header p{
+    margin-top:15px;
+    opacity:0.8;
+    animation:fadeUp 1.2s ease;
+}
+
+/* PLANES */
+
+section{
+    padding:60px 20px;
+}
+
+.titulo{
+    text-align:center;
+    color:#ff1e1e;
+    margin-bottom:40px;
+    font-size:1.6rem;
+}
+
+.planes{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.plan{
+    background:#141414;
+    padding:25px;
+    border-radius:20px;
+    border:1px solid #ff1e1e50;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.plan:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 20px #ff1e1e70;
+}
+
+.plan h2{
+    color:#ff1e1e;
+    margin-bottom:10px;
+}
+
+.precio{
+    font-size:1.4rem;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.plan ul{
+    list-style:none;
+}
+
+.plan ul li{
+    margin-bottom:8px;
+    font-size:0.9rem;
+    opacity:0.9;
+}
+
+/* PLAN DESTACADO */
+
+.destacado{
+    border:2px solid #ff1e1e;
+    background:#1a0000;
+}
+
+/* CONTACTO */
+
+.contacto{
+    text-align:center;
+    padding:80px 20px;
+    background:#111;
+}
+
+.contacto h2{
+    color:#ff1e1e;
+}
+
+.botones{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.btn{
+    padding:18px;
+    border-radius:40px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+    font-size:1rem;
+}
+
+.gmail{
+    background:#d44638;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* ANIMACIONES */
+
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* VERSION DESKTOP */
+
+@media(min-width:768px){
+
+    header h1{
+        font-size:3rem;
+    }
+
+    .planes{
+        flex-direction:row;
+        justify-content:center;
+    }
+
+    .plan{
+        width:300px;
+    }
+
+    .botones{
+        flex-direction:row;
+        justify-content:center;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>TRANSFORMÁ TU CUERPO</h1>
+    <p>Disciplina • Fuerza • Resultados reales</p>
+</header>
+
+<section>
+    <h2 class="titulo">PLANES MENSUALES</h2>
+
+    <div class="planes">
+
+        <div class="plan" onclick="scrollToContact()">
+            <h2>Plan Básico</h2>
+            <div class="precio">$15.000 / mes</div>
+            <ul>
+                <li>✔ Rutina personalizada</li>
+                <li>✔ Seguimiento semanal</li>
+                <li>✔ Organización de horarios</li>
+                <li>✔ Guía de disciplina</li>
+            </ul>
+        </div>
+
+        <div class="plan destacado" onclick="scrollToContact()">
+            <h2>Plan Pro</h2>
+            <div class="precio">$25.000 / mes</div>
+            <ul>
+                <li>✔ Todo lo del Básico</li>
+                <li>✔ Plan nutricional completo</li>
+                <li>✔ Ajustes personalizados</li>
+                <li>✔ Soporte continuo</li>
+            </ul>
+        </div>
+
+        <div class="plan" onclick="scrollToContact()">
+            <h2>Plan Elite</h2>
+            <div class="precio">$45.000 / mes</div>
+            <ul>
+                <li>✔ Todo lo del Pro</li>
+                <li>✔ Proteína incluida</li>
+                <li>✔ Atención prioritaria</li>
+                <li>✔ Control total de progreso</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class="contacto" id="contacto">
+    <h2>¿LISTO PARA EMPEZAR?</h2>
+    <p>Contactá al entrenador y comenzá hoy.</p>
+
+    <div class="botones">
+        <a href="mailto:entrenador@gmail.com" class="btn gmail">Enviar Gmail</a>
+        <a href="https://wa.me/5490000000000" target="_blank" class="btn whatsapp">Hablar por WhatsApp</a>
+    </div>
+</section>
+
+<script>
+function scrollToContact(){
+    document.getElementById("contacto").scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
